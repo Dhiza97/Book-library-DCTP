@@ -38,7 +38,7 @@ const server = http.createServer((req, res) => {
         req.on('end', () => {
             const newBook = JSON.parse(body);
             books.push(newBook);
-            fs.writeFileSync('books.json', JSON.stringify(books));
+            fs.writeFileSync('./books.json', JSON.stringify(books));
             res.end(JSON.stringify({ message: 'Book created successfully', book: newBook }));
         });
 
